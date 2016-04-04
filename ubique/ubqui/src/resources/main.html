@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Case</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1 text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<script src="jquery/jquery-1.12.2.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+	// When the document is ready
+	$(document).ready(function() {
+
+		$('#example2').datepicker({
+			format : "yyyy/mm/dd",
+			todayBtn : "linked",
+			clearBtn : true,
+			autoclose : true,
+			todayHighlight : true
+		});
+		$('#example3').datepicker({
+			format : "yyyy/mm/dd",
+			todayBtn : "linked",
+			clearBtn : true,
+			autoclose : true,
+			todayHighlight : true
+		});
+
+	});
+	
+	$('#form2').submit(function(){
+        $.ajax({
+            "type": "POST",
+            "url": "EditText.jsp",
+            "data": $('#form2').serialize(),
+            "success": function(){
+                //callback function
+            }
+        });
+    }
+	
+</script>
+
+</head>
+<body>
+
+	<div class="container">
+		<h2>Ubique</h2>
+		<ul class="nav nav-tabs" role="tablist" id="mainTab">
+			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">Devices <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a data-toggle="tab" href="#newDeviceId">New Device</a></li>
+					<li><a data-toggle="tab" href="#devicesId">Devices</a></li>
+				</ul></li>
+			<li><a data-toggle="tab" href="#reportsId">Reports</a></li>
+			<li><a data-toggle="tab" href="#aboutId">About</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
+				<h3>HOME</h3>
+				<p>نخستین ابر اینترنت اشیاء
+				<p>یوبیک نقطه اتصال تجهیزات شماست. کافی است ابزار هوشمند خود را
+					بر روی ابر یوبیک تعریف کنید تا از هرکجا و در هر زمانی به‌روز باشید،
+					هر تغییری را رصد کنید و در لحظه تصمیمات خود را اعمال کنید.</p>
+			</div>
+			<div id="devicesId" class="tab-pane fade">
+				<h3>Devices</h3>
+				<table class="table table-hover table-responsive table-condensed">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Description</th>
+							<th>Type</th>
+							<th>Sensor</th>
+							<th>Mac Address</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>John</td>
+							<td>Doe</td>
+							<td>john@example.com</td>
+							<td><div class="dropdown col-sm-10">
+									<button class="btn btn-primary dropdown-toggle" type="button"
+										data-toggle="dropdown">
+										<span class="caret"></span> Other
+									</button>
+								</div></td>
+							<td><div class="dropdown col-sm-10">
+									<button class="btn btn-primary dropdown-toggle" type="button"
+										data-toggle="dropdown">
+										<span class="caret"></span> Other
+									</button>
+								</div></td>
+							<td>john@example.com</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="newDeviceId" class="tab-pane fade">
+				<h3>New Device</h3>
+				<form id="deviceRegisterForm" method="post" action="adddevice">
+					<div class="form-group row">
+						<label for="inputName" class="col-sm-2 form-control-label">Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputName"
+								placeholder="Name">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputDescription" class="col-sm-2 form-control-label">Description</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" id="inputDescription"
+								placeholder="Description" rows="2"></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputType" class="col-sm-2 form-control-label">Type</label>
+
+						<div class="dropdown col-sm-10">
+							<button class="btn btn-primary dropdown-toggle" type="button"
+								data-toggle="dropdown">
+								<span class="caret"></span> Other
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Camera</a></li>
+								<li><a href="#">Computer</a></li>
+								<li><a href="#">Raspberry Pi</a></li>
+								<li><a href="#">Weather center</a></li>
+								<li><a href="#">Other</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputSensor" class="col-sm-2 form-control-label">Sensor</label>
+
+						<div class="dropdown col-sm-10">
+							<button class="btn btn-primary dropdown-toggle" type="button"
+								data-toggle="dropdown">
+								<span class="caret"></span> Other
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Accelerometer</a></li>
+								<li><a href="#">Air flow</a></li>
+								<li><a href="#">Bend</a></li>
+								<li><a href="#">Camera</a></li>
+								<li><a href="#">GPS</a></li>
+								<li><a href="#">Gas</a></li>
+								<li><a href="#">Humidity</a></li>
+								<li><a href="#">Infrared</a></li>
+								<li><a href="#">Light</a></li>
+								<li><a href="#">Magnetic</a></li>
+								<li><a href="#">RFID reader</a></li>
+								<li><a href="#">Sound</a></li>
+								<li><a href="#">Switch</a></li>
+								<li><a href="#">Temperature</a></li>
+								<li><a href="#">Thermometer</a></li>
+								<li><a href="#">Other</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputMacAddress" class="col-sm-2 form-control-label">Mac
+							Address</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputMacAddress"
+								placeholder="Mac Address">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-secondary"
+								onclick="createDevice()">Create</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="reportsId" class="tab-pane fade">
+				<h3>Reports</h3>
+				<div>
+					<form>
+						<div class="input-daterange input-group" id="datepicker">
+							<input type="text" class="input-sm form-control" name="start"
+								id="example2" /> <span class="input-group-addon">to</span> <input
+								type="text" class="input-sm form-control" name="end"
+								id="example3" />
+						</div>
+						<div>
+							<button type="submit" class="btn btn-primary">Search</button>
+						</div>
+					</form>
+				</div>
+				<div>
+					<table class="table table-hover table-responsive table-condensed">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Type</th>
+								<th>Sensor</th>
+								<th>Mac Address</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>John</td>
+								<td>Doe</td>
+								<td>john@example.com</td>
+								<td><div class="dropdown col-sm-10">
+										<button class="btn btn-primary dropdown-toggle" type="button"
+											data-toggle="dropdown">
+											<span class="caret"></span> Other
+										</button>
+									</div></td>
+								<td><div class="dropdown col-sm-10">
+										<button class="btn btn-primary dropdown-toggle" type="button"
+											data-toggle="dropdown">
+											<span class="caret"></span> Other
+										</button>
+									</div></td>
+								<td>john@example.com</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<div id="aboutId" class="tab-pane fade">
+				<h3>About us</h3>
+				<p>ما خیلی خفن هستیم! یک تیم حرفه‌ای از متخصصان حوزه‌های آی تی
+					نرم‌افزار، مخابرات، الکترونیک و سخت‌افزار با بیش از کلی تجربه</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+// 		$(document).ready(function() {
+//             $('#deviceRegisterForm').submit(function(event) {
+//             event.preventDefault();
+//                 var formData = $('#deviceRegisterForm').serialize();    /* capture the form data*/
+//                 $.getJSON('adddevice', formData, registerResults);
+//            //     $.post('/admin/user/signup', formData, registerResults);   /* get JSON back from the post method */
+//             });
+//             function registerResults(data) {
+//                     $('#deviceRegisterForm').fadeOut();
+//                     $('.starter-template').html(data.message);
+//                 }  // end of registerResults
+//         });  // end of ready
+		function createDevice()
+		{
+			var formData = $('#deviceRegisterForm').serialize();
+			$.post('/adddevice', formData, registerResults);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ir.iot.unique</groupId>
+		<artifactId>ubique</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>ubiqueui</artifactId>
+	<packaging>war</packaging>
+	<name>ubiqueui</name>
+	<url>http://maven.apache.org/</url>
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<jdk.version>1.8</jdk.version>
+		<spark.version>2.2</spark.version>
+		<spark.freemarker.version>2.0.0</spark.freemarker.version>
+		<freemarker.version>2.3.23</freemarker.version>
+		<commons.beanutils.version>1.9.2</commons.beanutils.version>
+
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>ir.iot.unique</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>ir.iot.unique</groupId> -->
+		<!-- <artifactId>ubiqueservice</artifactId> -->
+		<!-- <version>0.0.1-SNAPSHOT</version> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency>
+
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.wicket</groupId> -->
+<!-- 			<artifactId>wicket</artifactId> -->
+<!-- 			<version>1.4.17</version> -->
+<!-- 		</dependency> -->
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- Spark -->
+		<dependency>
+			<groupId>com.sparkjava</groupId>
+			<artifactId>spark-core</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sparkjava</groupId>
+			<artifactId>spark-template-freemarker</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<!-- Spark -->
+
+
+
+	</dependencies>
+
+	<build>
+		<finalName>ubiqueui</finalName>
+
+		<plugins>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<optimise>true</optimise>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
