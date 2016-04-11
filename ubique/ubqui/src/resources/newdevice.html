@@ -4,109 +4,110 @@
 <title>Bootstrap Case</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/site.css" rel="stylesheet">
+
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="jquery/jquery.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<script src="jquery/jquery-1.12.2.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
 
 </head>
 <body>
 
 	<div class="container">
-		<h2>Ubique</h2>
-		<ul class="nav nav-tabs">
-			<li><a href="main">Home</a></li>
-			<li class="dropdown active"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">Devices <span class="caret"></span></a>
-				<ul class="dropdown-menu col-sm-4">
-					<li><a data-toggle="tab" href="#newDeviceId">New Device</a></li>
-					<li><a data-toggle="tab" href="#devicesId">Devices</a></li>
-				</ul></li>
-			<li><a href="report">Reports</a></li>
-			<li><a href="about">About</a></li>
-		</ul>
+
+		<nav id="nav01"></nav>
 
 		<div class="tab-content">
-			<div id="newDeviceId" class="">
-				<h3>New Device</h3>
-				<form>
-					<div class="form-group row">
-						<label for="inputName" class="col-sm-2 form-control-label">Name</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputName"
-								placeholder="Name">
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="inputDescription" class="col-sm-2 form-control-label">Description</label>
-						<div class="col-sm-10">
-							<textarea class="form-control" id="inputDescription"
-								placeholder="Description" rows="2"></textarea>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="inputType" class="col-sm-2 form-control-label">Type</label>
-
-						<div class="dropdown col-sm-10">
-							<button class="btn btn-primary dropdown-toggle" type="button"
-								data-toggle="dropdown">
-								<span class="caret"></span> Other
-							</button>
-							<ul class="dropdown-menu">
-								<li><a href="#">Camera</a></li>
-								<li><a href="#">Computer</a></li>
-								<li><a href="#">Raspberry Pi</a></li>
-								<li><a href="#">Weather center</a></li>
-								<li><a href="#">Other</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="inputSensor" class="col-sm-2 form-control-label">Sensor</label>
-
-						<div class="dropdown col-sm-10">
-							<button class="btn btn-primary dropdown-toggle" type="button"
-								data-toggle="dropdown">
-								<span class="caret"></span> Other
-							</button>
-							<ul class="dropdown-menu">
-								<li><a href="#">Accelerometer</a></li>
-								<li><a href="#">Air flow</a></li>
-								<li><a href="#">Bend</a></li>
-								<li><a href="#">Camera</a></li>
-								<li><a href="#">GPS</a></li>
-								<li><a href="#">Gas</a></li>
-								<li><a href="#">Humidity</a></li>
-								<li><a href="#">Infrared</a></li>
-								<li><a href="#">Light</a></li>
-								<li><a href="#">Magnetic</a></li>
-								<li><a href="#">RFID reader</a></li>
-								<li><a href="#">Sound</a></li>
-								<li><a href="#">Switch</a></li>
-								<li><a href="#">Temperature</a></li>
-								<li><a href="#">Thermometer</a></li>
-								<li><a href="#">Other</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="form-group row">
-						<label for="inputMacAddress" class="col-sm-2 form-control-label">Mac
-							Address</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputMacAddress"
-								placeholder="Mac Address">
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-secondary">Create</button>
-						</div>
-					</div>
-				</form>
+			<div id="main">
+				<h1>New Device</h1>
+<!-- 				<p>Lorem Ipsum Porem Lorem Ipsum Porem</p> -->
 			</div>
+			<form action="addDevice" method="post" >
+				<div class="form-group row">
+					<label for="inputName" class="col-sm-2 form-control-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputName" name="inputName"
+							placeholder="Name">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputDescription" class="col-sm-2 form-control-label">Description</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" id="inputDescription" name="inputDescription"
+							placeholder="Description" rows="2"></textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputType" class="col-sm-2 form-control-label">Type</label>
 
+					<div class="dropdown col-sm-10">
+						<button class="btn btn-primary dropdown-toggle" type="button"
+							data-toggle="dropdown">
+							<span class="caret"></span> Other
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Camera</a></li>
+							<li><a href="#">Computer</a></li>
+							<li><a href="#">Raspberry Pi</a></li>
+							<li><a href="#">Weather center</a></li>
+							<li><a href="#">Other</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputSensor" class="col-sm-2 form-control-label">Sensor</label>
+
+					<div class="dropdown col-sm-10">
+						<button class="btn btn-primary dropdown-toggle" type="button"
+							data-toggle="dropdown">
+							<span class="caret"></span> Other
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Accelerometer</a></li>
+							<li><a href="#">Air flow</a></li>
+							<li><a href="#">Bend</a></li>
+							<li><a href="#">Camera</a></li>
+							<li><a href="#">GPS</a></li>
+							<li><a href="#">Gas</a></li>
+							<li><a href="#">Humidity</a></li>
+							<li><a href="#">Infrared</a></li>
+							<li><a href="#">Light</a></li>
+							<li><a href="#">Magnetic</a></li>
+							<li><a href="#">RFID reader</a></li>
+							<li><a href="#">Sound</a></li>
+							<li><a href="#">Switch</a></li>
+							<li><a href="#">Temperature</a></li>
+							<li><a href="#">Thermometer</a></li>
+							<li><a href="#">Other</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputMacAddress" class="col-sm-2 form-control-label">Mac
+						Address</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputMacAddress"
+							placeholder="Mac Address">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-secondary">Create</button>
+					</div>
+				</div>
+			</form>
 		</div>
+		
+		<footer id="foot01"></footer>
+
 	</div>
-<script type="text/javascript">
-documet.getElen	</script>
+
+	<script src="script/myscript.js"></script>
 </body>
 </html>

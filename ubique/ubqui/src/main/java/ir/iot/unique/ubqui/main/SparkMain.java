@@ -66,6 +66,35 @@ public class SparkMain {
       Map<String, Object> attributes = new HashMap<>();
       return freeMarkerEngine.render(new ModelAndView(attributes, "login.html"));
     });
+    
+    get("/index", (request, response) -> {
+        response.status(200);
+        response.type("text/html");
+        Map<String, Object> attributes = new HashMap<>();
+        return freeMarkerEngine.render(new ModelAndView(attributes, "index.html"));
+      });
+    get("/about", (request, response) -> {
+        response.status(200);
+        response.type("text/html");
+        Map<String, Object> attributes = new HashMap<>();
+        return freeMarkerEngine.render(new ModelAndView(attributes, "about.html"));
+      });
+    get("/devices", (request, response) -> {
+        response.status(200);
+        response.type("text/html");
+        Map<String, Object> attributes = new HashMap<>();
+        return freeMarkerEngine.render(new ModelAndView(attributes, "devices.html"));
+      });
+    post("/addDevice", (request, response) -> {
+    	
+    	String name = request.queryParams("inputName");
+    	String description = request.queryParams("inputDescription");
+    	
+        response.status(200);
+        response.type("text/html");
+        response.redirect("devices");
+        return "";
+      });
   }
 }
 
